@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Ass</display-name>
+	<welcome-file-list>
+		<welcome-file>shop</welcome-file>
+	</welcome-file-list>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>London Shop 2012</web-resource-name>
+			<description>This website sells Olympic's souvenir</description>
+			<url-pattern>/admin</url-pattern>
+		</web-resource-collection>
+
+		<auth-constraint>
+			<description>These users can use admin pages</description>
+			<role-name>AdminLondonShop</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>Authorise yourself dude !!!</realm-name>
+	</login-config>
+
+	<security-role>
+		<description>Authorise administrator</description>
+		<role-name>AdminLondonShop</role-name>
+	</security-role>
+
+	<servlet>
+		<description></description>
+		<display-name>MainController</display-name>
+		<servlet-name>MainController</servlet-name>
+		<servlet-class>id11458724.dang.controller.MainController</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>MainController</servlet-name>
+		<url-pattern>/shop</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>CartController</display-name>
+		<servlet-name>CartController</servlet-name>
+		<servlet-class>id11458724.dang.controller.CartController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CartController</servlet-name>
+		<url-pattern>/cart</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>OrderController</display-name>
+		<servlet-name>OrderController</servlet-name>
+		<servlet-class>id11458724.dang.controller.OrderController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrderController</servlet-name>
+		<url-pattern>/order</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>AdminController</display-name>
+		<servlet-name>AdminController</servlet-name>
+		<servlet-class>id11458724.dang.controller.AdminController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminController</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+</web-app>
